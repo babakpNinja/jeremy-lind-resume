@@ -119,6 +119,15 @@
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
   .chip{font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:30px;padding:5px 14px;background:#fff;}
 
+  /* Brands & Agencies logo wall */
+  .logos{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .logo{background:#fff;min-height:118px;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;transition:background .3s;}
+  .logo:hover{background:var(--mist);}
+  .logo .mark{font-family:'Fraunces',serif;font-weight:600;font-size:21px;letter-spacing:.01em;color:#9aa6b1;transition:color .3s;line-height:1.15;}
+  .logo:hover .mark{color:var(--navy);}
+  .logo .mark small{display:block;font-family:'Inter',sans-serif;font-weight:400;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#b7c0c9;margin-top:6px;}
+  .logo:hover .mark small{color:var(--gold-deep);}
+
   /* Perspectives */
   .persp{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
   .pcard{border:1px solid var(--line);border-radius:4px;padding:30px;background:#fff;transition:border-color .3s, transform .3s;display:flex;flex-direction:column;}
@@ -150,6 +159,7 @@
     .about-grid{grid-template-columns:1fr;gap:40px;}
     .cap-grid{grid-template-columns:1fr;}
     .persp{grid-template-columns:1fr;}
+    .logos{grid-template-columns:repeat(2,1fr);}
     .drive-grid{grid-template-columns:1fr;}
     .nav-links{display:none;}
     section{padding:84px 0;}
@@ -166,6 +176,7 @@
       <a href="#about">Profile</a>
       <a href="#expertise">Expertise</a>
       <a href="#experience">Experience</a>
+      <a href="#clients">Brands</a>
       <a href="#perspectives">Perspectives</a>
       <a href="#contact">Contact</a>
     </div>
@@ -249,9 +260,27 @@
   </div>
 </section>
 
-<section id="perspectives" class="mist">
+<section id="clients" class="mist">
   <div class="wrap">
-    <div class="sec-label"><span class="sec-num">04</span><h2 class="sec-title">Perspectives</h2></div>
+    <div class="sec-label"><span class="sec-num">04</span><h2 class="sec-title">Brands &amp; Agencies</h2></div>
+    <p class="sec-kicker reveal" style="margin-bottom:46px">A career building brands inside some of the world's most respected agencies — and the work that came out of it.</p>
+    <div class="logos reveal">
+      <div class="logo"><span class="mark">Walmart</span></div>
+      <div class="logo"><span class="mark">Wieden+Kennedy</span></div>
+      <div class="logo"><span class="mark">Ogilvy</span></div>
+      <div class="logo"><span class="mark">Leo&nbsp;Burnett</span></div>
+      <div class="logo"><span class="mark">JWT<small>J. Walter Thompson</small></span></div>
+      <div class="logo"><span class="mark">R/GA</span></div>
+      <div class="logo"><span class="mark">The&nbsp;Martin&nbsp;Agency</span></div>
+      <div class="logo"><span class="mark">West<small>Venture Studio</small></span></div>
+    </div>
+    <p class="sec-kicker reveal" style="margin-top:30px;font-size:14px;color:#8a96a2">Agencies &amp; brands across Jeremy's career. Logos shown represent organizations he has worked within or on; a full client roster is available on request.</p>
+  </div>
+</section>
+
+<section id="perspectives">
+  <div class="wrap">
+    <div class="sec-label"><span class="sec-num">05</span><h2 class="sec-title">Perspectives</h2></div>
     <p class="sec-kicker reveal" style="margin-bottom:46px">Selected writing on brand, marketing, and the realities of building demand — published with West Ventures.</p>
     <div class="persp reveal">
       <a class="pcard" href="https://medium.com/west-ventures/customer-journey-mapping-a-roadmap-for-brands-46e0a8c2d491" target="_blank" rel="noopener">
@@ -273,9 +302,9 @@
   </div>
 </section>
 
-<section id="drives">
+<section id="drives" class="mist">
   <div class="wrap">
-    <div class="sec-label"><span class="sec-num">05</span><h2 class="sec-title">What Drives Me</h2></div>
+    <div class="sec-label"><span class="sec-num">06</span><h2 class="sec-title">What Drives Me</h2></div>
     <div class="drive-grid">
       <div class="drive reveal"><h3>Founders with Big Visions</h3><p>The energy is in the earliest days — helping ambitious teams turn a bold idea into a brand the market believes in.</p></div>
       <div class="drive reveal"><h3>Craft That Performs</h3><p>Design and storytelling are only worth it when they move the numbers. Beautiful and effective are not a trade-off.</p></div>
