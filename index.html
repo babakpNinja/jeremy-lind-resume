@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jeremy Lind — Brand &amp; Marketing Leader</title>
+<meta name="description" content="Jeremy Lind — Managing Director, Product &amp; Brand Experience at West. Brand and marketing leadership for ambitious, venture-backed companies." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#06243b;
+    --navy-2:#0a2f4d;
+    --ink:#13202e;
+    --paper:#ffffff;
+    --mist:#f5f7f9;
+    --line:#e4e8ec;
+    --muted:#5d6b78;
+    --gold:#c2a25a;
+    --gold-deep:#a8884a;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    font-weight:300;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;font-weight:500;letter-spacing:-.01em;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+
+  /* ---- Nav ---- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    background:rgba(255,255,255,0);
+    transition:background .4s ease, box-shadow .4s ease, padding .4s ease;
+    padding:26px 0;
+  }
+  nav.scrolled{background:rgba(255,255,255,.94);box-shadow:0 1px 0 var(--line);padding:16px 0;backdrop-filter:saturate(180%) blur(8px);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:#fff;transition:color .4s;letter-spacing:.01em;}
+  nav.scrolled .brand{color:var(--navy);}
+  .nav-links{display:flex;gap:34px;}
+  .nav-links a{font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.82);font-weight:400;transition:color .25s;}
+  nav.scrolled .nav-links a{color:var(--muted);}
+  .nav-links a:hover{color:var(--gold);}
+  .nav-toggle{display:none;}
+
+  /* ---- Hero ---- */
+  header.hero{
+    min-height:100vh;display:flex;align-items:center;position:relative;
+    background:linear-gradient(160deg,#06243b 0%,#0a2f4d 60%,#0c3556 100%);
+    color:#fff;overflow:hidden;
+  }
+  header.hero::after{
+    content:"";position:absolute;right:-12%;top:50%;transform:translateY(-50%);
+    width:560px;height:560px;border-radius:50%;
+    background:radial-gradient(circle, rgba(194,162,90,.16), rgba(194,162,90,0) 70%);
+  }
+  .hero-inner{position:relative;z-index:2;padding:120px 0 80px;}
+  .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:28px;}
+  .eyebrow::before{content:"";width:38px;height:1px;background:var(--gold);display:inline-block;}
+  .hero h1{font-size:clamp(46px,7vw,82px);line-height:1.02;margin-bottom:24px;font-weight:500;}
+  .hero .lede{font-size:clamp(18px,2.2vw,23px);max-width:680px;color:rgba(255,255,255,.86);font-weight:300;}
+  .hero .lede strong{color:#fff;font-weight:500;}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:14px 40px;margin-top:48px;}
+  .hero-meta div{font-size:14px;color:rgba(255,255,255,.7);}
+  .hero-meta span{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+  .hero-cta{margin-top:52px;display:flex;gap:18px;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:15px 30px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;border-radius:2px;transition:all .25s;}
+  .btn-primary{background:var(--gold);color:var(--navy);}
+  .btn-primary:hover{background:#d4b46e;transform:translateY(-2px);}
+  .btn-ghost{border:1px solid rgba(255,255,255,.32);color:#fff;}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+  .scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);z-index:2;}
+
+  /* ---- Sections ---- */
+  section{padding:118px 0;}
+  section.mist{background:var(--mist);}
+  .sec-label{display:flex;align-items:baseline;gap:16px;margin-bottom:46px;}
+  .sec-num{font-family:'Fraunces',serif;font-size:15px;color:var(--gold-deep);font-weight:600;}
+  .sec-title{font-size:clamp(28px,4vw,40px);color:var(--navy);font-weight:500;}
+  .sec-kicker{max-width:620px;color:var(--muted);font-size:17px;margin:-30px 0 0;}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:start;}
+  .about-quote{font-family:'Fraunces',serif;font-size:clamp(22px,2.6vw,29px);line-height:1.4;color:var(--navy);font-weight:400;}
+  .about-quote .accent{color:var(--gold-deep);}
+  .about-body p{color:#3a4754;margin-bottom:18px;font-size:16px;}
+  .stat-row{display:flex;gap:40px;margin-top:38px;border-top:1px solid var(--line);padding-top:28px;}
+  .stat .n{font-family:'Fraunces',serif;font-size:38px;color:var(--navy);font-weight:600;line-height:1;}
+  .stat .l{font-size:13px;color:var(--muted);letter-spacing:.04em;margin-top:8px;}
+
+  /* Expertise */
+  .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);}
+  .cap{background:#fff;padding:38px 32px;transition:transform .3s, box-shadow .3s;}
+  .cap:hover{transform:translateY(-4px);box-shadow:0 18px 40px -22px rgba(6,36,59,.4);z-index:2;position:relative;}
+  .cap .ci{font-family:'Fraunces',serif;color:var(--gold-deep);font-size:15px;font-weight:600;margin-bottom:16px;}
+  .cap h3{font-size:20px;color:var(--navy);margin-bottom:10px;font-weight:500;}
+  .cap p{font-size:15px;color:var(--muted);}
+
+  /* Experience timeline */
+  .tl{position:relative;margin-top:10px;}
+  .tl::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:var(--line);}
+  .tl-item{position:relative;padding:0 0 46px 44px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{content:"";position:absolute;left:0;top:6px;width:15px;height:15px;border-radius:50%;background:#fff;border:2px solid var(--gold);}
+  .tl-item.lead::before{background:var(--gold);}
+  .tl-role{font-family:'Fraunces',serif;font-size:21px;color:var(--navy);font-weight:500;}
+  .tl-org{font-size:14px;color:var(--gold-deep);letter-spacing:.03em;margin:3px 0 12px;font-weight:500;text-transform:uppercase;}
+  .tl-item p{color:#3a4754;font-size:15.5px;max-width:680px;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+  .chip{font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:30px;padding:5px 14px;background:#fff;}
+
+  /* Perspectives */
+  .persp{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .pcard{border:1px solid var(--line);border-radius:4px;padding:30px;background:#fff;transition:border-color .3s, transform .3s;display:flex;flex-direction:column;}
+  .pcard:hover{border-color:var(--gold);transform:translateY(-3px);}
+  .pcard .tag{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:16px;}
+  .pcard h3{font-size:19px;color:var(--navy);line-height:1.3;margin-bottom:14px;font-weight:500;flex:1;}
+  .pcard .more{font-size:13px;color:var(--muted);letter-spacing:.04em;}
+  .pcard:hover .more{color:var(--gold-deep);}
+
+  /* Drives / passions */
+  .drive-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px 56px;}
+  .drive h3{font-size:20px;color:var(--navy);margin-bottom:10px;font-weight:500;display:flex;align-items:center;gap:12px;}
+  .drive h3::before{content:"";width:26px;height:2px;background:var(--gold);}
+  .drive p{color:#3a4754;font-size:15.5px;}
+
+  /* Contact */
+  footer.contact{background:linear-gradient(160deg,#06243b,#0a2f4d);color:#fff;padding:104px 0 60px;}
+  .contact h2{font-size:clamp(30px,4.5vw,46px);color:#fff;max-width:720px;margin-bottom:26px;}
+  .contact p.sub{color:rgba(255,255,255,.78);max-width:560px;font-size:17px;margin-bottom:38px;}
+  .contact-links{display:flex;flex-wrap:wrap;gap:16px;}
+  .foot-bottom{margin-top:80px;padding-top:28px;border-top:1px solid rgba(255,255,255,.14);display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:13px;color:rgba(255,255,255,.55);}
+  .foot-bottom a:hover{color:var(--gold);}
+
+  /* Reveal animation */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);}
+  .reveal.in{opacity:1;transform:none;}
+
+  @media(max-width:860px){
+    .about-grid{grid-template-columns:1fr;gap:40px;}
+    .cap-grid{grid-template-columns:1fr;}
+    .persp{grid-template-columns:1fr;}
+    .drive-grid{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+    section{padding:84px 0;}
+    .hero-inner{padding:130px 0 90px;}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">Jeremy&nbsp;Lind</a>
+    <div class="nav-links">
+      <a href="#about">Profile</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#experience">Experience</a>
+      <a href="#perspectives">Perspectives</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div class="eyebrow">Brand &amp; Marketing Leadership</div>
+    <h1>Jeremy Lind</h1>
+    <p class="lede">Managing Director, Product &amp; Brand Experience at <strong>West</strong> — a venture studio and brand &amp; marketing firm for ambitious, venture-backed companies. I unite <strong>strategy, design, and execution</strong> to build brands and activations that deliver measurable growth and lasting outcomes.</p>
+    <div class="hero-meta">
+      <div><span>Based in</span>Portland, Oregon · SF + NY</div>
+      <div><span>Focus</span>Brand · Product Experience · Go-to-Market</div>
+      <div><span>Experience</span>13+ years building brands</div>
+    </div>
+    <div class="hero-cta">
+      <a href="#experience" class="btn btn-primary">View Experience</a>
+      <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-label"><span class="sec-num">01</span><h2 class="sec-title">Profile</h2></div>
+    <div class="about-grid">
+      <div class="about-body reveal">
+        <p class="about-quote">A creative leader who <span class="accent">unites strategy, design, and execution</span> — turning big visions into enduring brands and companies that move markets.</p>
+      </div>
+      <div class="about-body reveal">
+        <p>Jeremy Lind is a brand and marketing leader with more than a decade shaping how ambitious, venture-backed companies show up in the world. As Managing Director of Product &amp; Brand Experience at West, he helps founders translate bold ideas into coherent brands, sharp positioning, and customer experiences that compound into growth.</p>
+        <p>His approach is deliberately hybrid — equal parts strategist, designer, and operator — grounded in the belief that brand is built across every moment of the customer journey, not just the logo.</p>
+        <div class="stat-row">
+          <div class="stat"><div class="n">13+</div><div class="l">Years building<br/>brands at West</div></div>
+          <div class="stat"><div class="n">4</div><div class="l">Global agencies<br/>in early career</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="expertise" class="mist">
+  <div class="wrap">
+    <div class="sec-label"><span class="sec-num">02</span><h2 class="sec-title">Areas of Expertise</h2></div>
+    <p class="sec-kicker reveal" style="margin-bottom:46px">Where strategy meets craft — the disciplines Jeremy brings to founders and teams building category-defining companies.</p>
+    <div class="cap-grid reveal">
+      <div class="cap"><div class="ci">01</div><h3>Brand Strategy &amp; Positioning</h3><p>Defining what a company stands for and how it earns a distinct place in the minds of customers and investors.</p></div>
+      <div class="cap"><div class="ci">02</div><h3>Product &amp; Brand Experience</h3><p>Designing cohesive experiences across product and brand so every touchpoint reinforces the same promise.</p></div>
+      <div class="cap"><div class="ci">03</div><h3>Creative Direction</h3><p>Leading design and storytelling — honed across world-class agencies — into work that is both beautiful and effective.</p></div>
+      <div class="cap"><div class="ci">04</div><h3>Go-to-Market for Startups</h3><p>Helping early-stage founders avoid the marketing missteps that stall growth and build durable demand instead.</p></div>
+      <div class="cap"><div class="ci">05</div><h3>Customer Journey Mapping</h3><p>Examining every moment across the product and brand experience to find where loyalty and revenue are won.</p></div>
+      <div class="cap"><div class="ci">06</div><h3>Marketing Leadership</h3><p>Standing up and steering marketing functions so they drive measurable, compounding business outcomes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-label"><span class="sec-num">03</span><h2 class="sec-title">Selected Experience</h2></div>
+    <div class="tl reveal">
+      <div class="tl-item lead">
+        <div class="tl-role">Managing Director — Product &amp; Brand Experience</div>
+        <div class="tl-org">West · Venture Studio &amp; Brand Firm · Portland / SF / NY</div>
+        <p>Partners with venture-backed founders to transform big visions into enduring brands and impactful companies. Leads brand building, product &amp; brand experience, and marketing leadership — and writes on building brands and avoiding the marketing pitfalls that cause startups to stall. Involved in West-built ventures including Buy.Video, a tool reshaping how creators earn from video.</p>
+        <div class="chips"><span class="chip">Brand Building</span><span class="chip">Product Experience</span><span class="chip">Marketing Leadership</span><span class="chip">Founder Partnership</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-role">Creative Direction &amp; Design — Global Agencies</div>
+        <div class="tl-org">JWT · Ogilvy · Leo Burnett · AtmosphereBBDO</div>
+        <p>Built a foundation in art, design, and creative direction across some of the world's most respected advertising agencies, contributing to major brand campaigns — including Walmart's celebrated "yodeling cat" work — before bringing that craft to the startup world.</p>
+        <div class="chips"><span class="chip">Creative Direction</span><span class="chip">Art &amp; Design</span><span class="chip">Brand Campaigns</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-role">Graduate Study — Political Management</div>
+        <div class="tl-org">The George Washington University · Graduate School of Political Management</div>
+        <p>Graduate education in political management — an early grounding in persuasion, message strategy, and how ideas move people, themes that still run through his brand work today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="perspectives" class="mist">
+  <div class="wrap">
+    <div class="sec-label"><span class="sec-num">04</span><h2 class="sec-title">Perspectives</h2></div>
+    <p class="sec-kicker reveal" style="margin-bottom:46px">Selected writing on brand, marketing, and the realities of building demand — published with West Ventures.</p>
+    <div class="persp reveal">
+      <a class="pcard" href="https://medium.com/west-ventures/customer-journey-mapping-a-roadmap-for-brands-46e0a8c2d491" target="_blank" rel="noopener">
+        <div class="tag">Brand Experience</div>
+        <h3>Customer Journey Mapping: A Roadmap for Brands</h3>
+        <div class="more">Read on West Ventures →</div>
+      </a>
+      <a class="pcard" href="https://medium.com/west-ventures/how-mismanaging-marketing-causes-many-startups-to-fail-9135fe3e9351" target="_blank" rel="noopener">
+        <div class="tag">Startup Marketing</div>
+        <h3>How Mismanaging Marketing Causes Many Startups to Fail</h3>
+        <div class="more">Read on West Ventures →</div>
+      </a>
+      <a class="pcard" href="https://west-venture-studio.medium.com" target="_blank" rel="noopener">
+        <div class="tag">Market Signals</div>
+        <h3>When Influencer Rates Double — What It Means for Brands</h3>
+        <div class="more">Read on West Ventures →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="drives">
+  <div class="wrap">
+    <div class="sec-label"><span class="sec-num">05</span><h2 class="sec-title">What Drives Me</h2></div>
+    <div class="drive-grid">
+      <div class="drive reveal"><h3>Founders with Big Visions</h3><p>The energy is in the earliest days — helping ambitious teams turn a bold idea into a brand the market believes in.</p></div>
+      <div class="drive reveal"><h3>Craft That Performs</h3><p>Design and storytelling are only worth it when they move the numbers. Beautiful and effective are not a trade-off.</p></div>
+      <div class="drive reveal"><h3>The Whole Journey</h3><p>Brand lives in every moment a customer touches — the obsession is making each one add up to something lasting.</p></div>
+      <div class="drive reveal"><h3>Strategy &amp; Execution as One</h3><p>The most interesting work happens where thinking and making meet, not where they're handed off.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <h2 class="serif reveal">Let's build a brand worth believing in.</h2>
+    <p class="sub reveal">Open to conversations with founders, teams, and partners shaping ambitious, venture-backed companies.</p>
+    <div class="contact-links reveal">
+      <a href="https://www.linkedin.com/in/jeremiahlind" target="_blank" rel="noopener" class="btn btn-primary">LinkedIn</a>
+      <a href="https://jeremiahlind.cargo.site" target="_blank" rel="noopener" class="btn btn-ghost">Portfolio</a>
+      <a href="https://west.ventures" target="_blank" rel="noopener" class="btn btn-ghost">West</a>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 Jeremy Lind · Brand &amp; Marketing Leadership</div>
+      <div>Portland, Oregon</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav background on scroll
+  var nav = document.getElementById('nav');
+  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 60); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // Scroll-reveal
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
